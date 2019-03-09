@@ -40,5 +40,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put('/food/{id}', 'FoodController@update')->name('food.update');
 	Route::delete('/food/{id}', 'FoodController@delete')->name('food.delete');
 	
-	Route::get('/send mail', 'MailController@mail')->name('email');
+	Route::get('/send mail', 'MailController@index')->name('email.create');
+	Route::post('/send mail', 'MailController@sendEmail')->name('email.send');
 });

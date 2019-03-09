@@ -31,7 +31,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a href="{{route('email')}}" class="nav-link {{ (Request::is('email') ? 'active' : '') }}">E-mail</a>
+        <a href="{{route('email.create')}}" class="nav-link {{ (Request::is('send mail') ? 'active' : '') }}">E-mail</a>
       </li>
       @endguest
     </ul>
