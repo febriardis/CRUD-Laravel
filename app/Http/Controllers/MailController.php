@@ -14,6 +14,13 @@ class MailController extends Controller
 
 	public function sendEmail(Request $request)
 	{
+		$this->validate($request,[
+			'email'=> 'required',
+			'nama' => 'required',
+			'judul'=> 'required',
+			'pesan'=> 'required'
+		]);
+
  		$conn = @fsockopen("www.google.com", 80); //website, port  (try 80 or 443)
 	    if ($conn){
 	    	Mail::send('mail.email', ['nama' => $request->nama, 'pesan' => $request->pesan], function ($message) use ($request)

@@ -26,7 +26,7 @@
           Apps
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="{{route('book.index')}}">Book Store</a>
+          <a class="dropdown-item {{ (Request::is('books') ? 'active' : '') }}" href="{{route('book.index')}}">Book Store</a>
           <a class="dropdown-item" href="#">Food Store</a>
         </div>
       </li>
