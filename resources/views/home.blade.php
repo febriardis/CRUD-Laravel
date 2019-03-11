@@ -1,9 +1,21 @@
 @extends('layouts.layout')
 
+@section('nav-right')
+<li class="nav-item">
+	<a href="{{route('login')}}" class="nav-link">Login</a>
+</li>
+@endsection
+
 @section('content')
 <div class="container">
 	<br>	
-	<h3>Welcome <a href="#">{{Auth::user()->name}}</a></h3>
+	<h3>Welcome 
+		@guest
+		@else
+		<a href="#">{{Auth::user()->name}}</a>
+		@endguest
+	</h3>
+	
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

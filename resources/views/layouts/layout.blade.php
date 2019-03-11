@@ -13,27 +13,31 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="#">CRUD-Laravel</a>
-    
+    <!-- Brand/logo -->
+
     <!-- link left -->
     <ul class="navbar-nav mr-auto">
-      @guest
-      @else
       <li class="nav-item">
         <a class="nav-link {{ (Request::is('home') ? 'active' : '') }}" href="{{route('home')}}">Home</a>
       </li>
+      @guest
+      @else
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
           Apps
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item {{ (Request::is('books') ? 'active' : '') }}" href="{{route('book.index')}}">Book Store</a>
-          <a class="dropdown-item" href="#">Food Store</a>
+          <a class="dropdown-item {{ (Request::is('foods') ? 'active' : '') }}" href="{{route('food.index')}}">Food Store</a>
         </div>
       </li>
       <li class="nav-item">
         <a href="{{route('email.create')}}" class="nav-link {{ (Request::is('send mail') ? 'active' : '') }}">E-mail</a>
       </li>
       @endguest
+      <li class="nav-item">
+        <a class="nav-link {{ (Request::is('about') ? 'active' : '') }}" href="#">About</a>
+      </li>
     </ul>
     <!-- /link left -->
 

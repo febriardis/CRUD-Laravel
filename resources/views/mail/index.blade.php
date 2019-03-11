@@ -3,11 +3,12 @@
 @section('content')
 <div class="container"><br>
     <h1>Send Email</h1>
-    @if(\Session::has('alert-failed'))
+    @if(Session::has('alert-failed'))
         <div class="alert alert-failed">
             <div>{{Session::get('alert-failed')}}</div>
         </div>
     @endif
+    
     @if(Session::has('alert-success'))
         <div class="alert alert-success">
             <div>{{Session::get('alert-success')}}</div>

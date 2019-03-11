@@ -24,7 +24,10 @@
           <input class="form-check-input" type="checkbox" name="remember"> Remember me
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a class="btn btn-link" href="">
+        {{ __('Forgot Your Password?') }}
+      </a>
     </form>
   </div>
 @endsection
